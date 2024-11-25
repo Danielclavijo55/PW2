@@ -6,6 +6,9 @@ import { Diagnostico } from './diagnostico/diagnostico.entity';
 import { MedicoService } from './medico/medico.service';
 import { PacienteService } from './paciente/paciente.service';
 import { DiagnosticoService } from './diagnostico/diagnostico.service';
+import { MedicoController } from './medico/medico.controller';
+import { PacienteController } from './paciente/paciente.controller';
+import { DiagnosticoController } from './diagnostico/diagnostico.controller';
 
 @Module({
   imports: [
@@ -23,6 +26,7 @@ import { DiagnosticoService } from './diagnostico/diagnostico.service';
     }),
     TypeOrmModule.forFeature([Medico, Paciente, Diagnostico]),
   ],
+  controllers: [MedicoController, PacienteController, DiagnosticoController],
   providers: [MedicoService, PacienteService, DiagnosticoService],
 })
 export class AppModule {}
